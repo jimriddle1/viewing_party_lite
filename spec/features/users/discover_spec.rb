@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover Page' do
   it 'discover button' do
+    binding.pry
     @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
     @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
 

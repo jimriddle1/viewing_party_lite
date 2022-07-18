@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before :each do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'password123', password_confirmation: 'password123')
+    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'password456', password_confirmation: 'password456')
   end
 
   it 'shows the title of the application' do
@@ -38,5 +38,27 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq(user_path(@user1))
     click_link 'Home'
     expect(current_path).to eq(root_path)
+  end
+
+  it 'has a link to login for a user' do
+    visit root_path
+    click_link 'Login'
+    expect(current_path).to eq('/login')
+    # save_and_open_page
+    fill_in 'email', with: 'jimar@jimar.com'
+    fill_in 'password', with: 'password123'
+    click_button 'Log In'
+    expect(current_path).to eq(user_path(@user1))
+  end
+
+  it 'has a link to login for a user - sad path' do
+    visit root_path
+    click_link 'Login'
+    expect(current_path).to eq('/login')
+    fill_in 'email', with: 'jimar@jimar.com'
+    fill_in 'password', with: 'password456'
+    click_button 'Log In'
+    expect(current_path).to eq('/login')
+    expect(page).to have_content("Invalid Credentials")
   end
 end

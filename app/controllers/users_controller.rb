@@ -6,8 +6,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to user_path(user.id)
+    user = User.new(user_params)
+    if user.save
+      redirect_to user_path(user.id)
+      flash[:success] = "Welcome, #{user.email}!"
+    else
+      redirect_to register_path
+      flash[:error] = "Invalid Credentials"
+    end
   end
 
   def show
@@ -33,6 +39,20 @@ class UsersController < ApplicationController
     @movie = MovieFacade.movie_details(params[:movie_id])
     @cast = MovieFacade.movie_cast(params[:movie_id])
     @reviews = MovieFacade.movie_reviews(params[:movie_id])
+  end
+
+  def login_form
+  end
+
+  def login
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      redirect_to root_path
+      flash[:success] = "Welcome back, #{user.email}!"
+    else
+      redirect_to '/login'
+      flash[:error] = user.errors.full_messages
+    end
   end
 
   private

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root 'landing#home'
 
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login'
+
   resources :users, except: [:new]
   resources :parties
 

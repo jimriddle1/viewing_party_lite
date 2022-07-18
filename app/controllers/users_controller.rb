@@ -47,11 +47,11 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
-      redirect_to root_path
+      redirect_to user_path(user)
       flash[:success] = "Welcome back, #{user.email}!"
     else
       redirect_to '/login'
-      flash[:error] = user.errors.full_messages
+      flash[:error] = "Invalid Credentials"
     end
   end
 

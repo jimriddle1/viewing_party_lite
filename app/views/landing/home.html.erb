@@ -11,5 +11,5 @@
 
 <h3>Users:</h3>
 <% @users.each do |user| %>
-  <p><%= link_to "#{user.name}", '/users/dashboard' %></p>
+  <p><%= "#{user.email}"%></p>
 <% end %>

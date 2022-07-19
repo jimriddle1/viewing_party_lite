@@ -35,24 +35,24 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq(register_path)
   end
 
-  it 'list existing users which links to an existing dashboards' do
-    visit root_path
-    expect(page).to have_link('Jimar')
-    expect(page).to have_link('NickT')
-    click_link 'Jimar'
-    expect(current_path).to eq('/users/dashboard')
-  end
-
-  it 'have a link to go back to the home page on all pagess' do
-    visit root_path
-    expect(page).to have_link('Home')
-    click_link 'Home'
-    expect(current_path).to eq(root_path)
-    click_link 'Jimar'
-    expect(current_path).to eq('/users/dashboard')
-    click_link 'Home'
-    expect(current_path).to eq(root_path)
-  end
+  # it 'list existing users which links to an existing dashboards' do
+  #   visit root_path
+  #   expect(page).to have_link('Jimar')
+  #   expect(page).to have_link('NickT')
+  #   click_link 'Jimar'
+  #   expect(current_path).to eq('/users/dashboard')
+  # end
+  #
+  # it 'have a link to go back to the home page on all pagess' do
+  #   visit root_path
+  #   expect(page).to have_link('Home')
+  #   click_link 'Home'
+  #   expect(current_path).to eq(root_path)
+  #   click_link 'Jimar'
+  #   expect(current_path).to eq('/users/dashboard')
+  #   click_link 'Home'
+  #   expect(current_path).to eq(root_path)
+  # end
 
   it 'has a link to login for a user' do
     visit root_path
@@ -87,5 +87,12 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq(root_path)
     expect(page).to have_link('Login')
     expect(page).to have_button('Create New User')
+  end
+
+  it 'shows emails of users that are logged in' do
+    visit root_path
+    expect(page).to have_content('NickT@sucks.com')
+    expect(page).to have_content('jimar@jimar.com')
+
   end
 end

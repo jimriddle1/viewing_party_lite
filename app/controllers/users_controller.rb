@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def movies
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
 
     @movies = if params[:search].present?
                 MovieFacade.movie_by_keyword(params[:search])
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def movie_details
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @movie = MovieFacade.movie_details(params[:movie_id])
     @cast = MovieFacade.movie_cast(params[:movie_id])
     @reviews = MovieFacade.movie_reviews(params[:movie_id])

@@ -15,7 +15,7 @@ RSpec.describe 'Movie Results Page' do
     visit "/users/discover"
 
     click_button 'Top Rated Movies'
-    expect(current_path).to eq("/users/#{User.last.id}/movies")
+    expect(current_path).to eq("/users/movies")
 
     expect(page).to have_content('Movies:')
     expect(page).to have_content('Title: The Shawshank Redemption')
@@ -40,7 +40,7 @@ RSpec.describe 'Movie Results Page' do
     fill_in('search', with: 'Fight Club')
     click_button 'Search for Movie'
 
-    expect(current_path).to eq("/users/#{User.last.id}/movies")
+    expect(current_path).to eq("/users/movies")
 
     expect(page).to have_content('Title: Fight Club')
     expect(page).to have_content('Average Vote: 8.4')
@@ -54,7 +54,7 @@ RSpec.describe 'Movie Results Page' do
     fill_in 'password_confirmation', with: 'password123'
     click_on 'Create User'
 
-    visit "/users/#{User.last.id}/movies"
+    visit "/users/movies"
 
     click_button('Discover Page')
 

@@ -16,7 +16,7 @@ RSpec.describe 'Party Dashboard Page', :vcr do
     fill_in 'password_confirmation', with: 'password123'
     click_on 'Create User'
 
-    visit "/users/#{User.last.id}/movies/550/viewing-party/new"
+    visit "/users/movies/550/viewing-party/new"
 
     fill_in 'Duration', with: '150'
     fill_in 'Date', with: '12/1/2022'
@@ -24,8 +24,10 @@ RSpec.describe 'Party Dashboard Page', :vcr do
     check @user2.name.to_s
     check @user3.name.to_s
 
+    # save_and_open_page
+
     click_on 'Create Party'
-    expect(current_path).to eq("/users/#{User.last.id}/viewing-party/dashboard")
+    expect(current_path).to eq("/users/viewing-party/dashboard")
 
     expect(page).to have_content('Title: Fight Club')
     expect(page).to have_content('Date: 12/01/2022')

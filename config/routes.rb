@@ -5,17 +5,18 @@ Rails.application.routes.draw do
 
   root 'landing#home'
   get '/users/discover', to: 'users#discover'
+  get '/users/dashboard', to: 'users#show'
 
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login'
 
-  resources :users, except: [:new]
+  resources :users, except: [:new, :show]
   resources :parties
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   # get '/admin', to: 'admins#dashboard'
-  get '/users/:id/movies', to: 'users#movies'
+  get '/users/movies', to: 'users#movies'
   get '/users/:id/movies/:movie_id', to: 'users#movie_details'
   get '/users/:id/movies/:movie_id/viewing-party/new', to: 'parties#new'
   post '/users/:id/viewing-party/dashboard', to: 'parties#create'

@@ -4,13 +4,27 @@ require 'rails_helper'
 
 RSpec.describe 'User Show Page' do
   it 'show me a users dashboard ' do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
+    visit register_path
+    fill_in 'name', with: 'Jamar'
+    fill_in 'email', with: 'Jamar@sucks.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
 
-    visit user_path(@user1.id)
+    visit register_path
+    fill_in 'name', with: 'Jamar2'
+    fill_in 'email', with: 'Jamar@sucks2.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
 
-    expect(page).to have_content("Jimar's Dashboard")
-    expect(page).to_not have_content("NickT's Dashboard")
+    visit "/users/dashboard"
+
+    # save_and_open_page
+
+
+    expect(page).to have_content("Jamar2's Dashboard")
+    expect(page).to_not have_content("Jamar's Dashboard")
 
     expect(page).to have_link('Viewing Parties')
     expect(page).to have_button('Discover Movies')

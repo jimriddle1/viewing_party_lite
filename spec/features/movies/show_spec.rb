@@ -4,27 +4,42 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Detail/Show Page' do
   it 'should have a button for creating a viewing party', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    visit "/users/#{@user1.id}/movies/550"
+    visit register_path
+    fill_in 'name', with: 'Jamar'
+    fill_in 'email', with: 'Jamar@sucks.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
+    visit "/users/#{User.last.id}/movies/550"
 
     click_button('Create Viewing Party')
 
-    expect(current_path).to eq("/users/#{@user1.id}/movies/550/viewing-party/new")
+    expect(current_path).to eq("/users/#{User.last.id}/movies/550/viewing-party/new")
   end
 
   it 'has a return to movie discovery page button', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    visit "/users/#{@user1.id}/movies/550"
+    visit register_path
+    fill_in 'name', with: 'Jamar'
+    fill_in 'email', with: 'Jamar@sucks.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
+    visit "/users/#{User.last.id}/movies/550"
 
     click_button('Discover Page')
 
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/users/discover")
   end
 
   it 'Shows Movie Details', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    visit register_path
+    fill_in 'name', with: 'Jamar'
+    fill_in 'email', with: 'Jamar@sucks.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
 
-    visit "/users/#{@user1.id}/movies/550"
+    visit "/users/#{User.last.id}/movies/550"
     # save_and_open_page
 
     expect(page).to have_content('Title: Fight Club')

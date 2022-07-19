@@ -4,8 +4,21 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before :each do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'password123', password_confirmation: 'password123')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'password456', password_confirmation: 'password456')
+    visit register_path
+    fill_in 'name', with: 'NickT'
+    fill_in 'email', with: 'NickT@sucks.com'
+    fill_in 'password', with: 'password456'
+    fill_in 'password_confirmation', with: 'password456'
+    click_on 'Create User'
+
+    visit register_path
+    fill_in 'name', with: 'Jimar'
+    fill_in 'email', with: 'jimar@jimar.com'
+    fill_in 'password', with: 'password123'
+    fill_in 'password_confirmation', with: 'password123'
+    click_on 'Create User'
+    # @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'password123', password_confirmation: 'password123')
+    # @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'password456', password_confirmation: 'password456')
   end
 
   it 'shows the title of the application' do
@@ -26,7 +39,7 @@ RSpec.describe 'Landing Page' do
     expect(page).to have_link('Jimar')
     expect(page).to have_link('NickT')
     click_link 'Jimar'
-    expect(current_path).to eq(user_path(@user1))
+    expect(current_path).to eq('/users/dashboard')
   end
 
   it 'have a link to go back to the home page on all pagess' do
@@ -35,7 +48,7 @@ RSpec.describe 'Landing Page' do
     click_link 'Home'
     expect(current_path).to eq(root_path)
     click_link 'Jimar'
-    expect(current_path).to eq(user_path(@user1))
+    expect(current_path).to eq('/users/dashboard')
     click_link 'Home'
     expect(current_path).to eq(root_path)
   end
@@ -44,11 +57,11 @@ RSpec.describe 'Landing Page' do
     visit root_path
     click_link 'Login'
     expect(current_path).to eq('/login')
-    # save_and_open_page
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'password123'
+    # save_and_open_page
     click_button 'Log In'
-    expect(current_path).to eq(user_path(@user1))
+    expect(current_path).to eq('/users/dashboard')
   end
 
   it 'has a link to login for a user - sad path' do

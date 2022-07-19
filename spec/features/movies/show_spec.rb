@@ -54,4 +54,13 @@ RSpec.describe 'Movies Detail/Show Page' do
 
     expect(page).to_not have_content('Christina Cabot')
   end
+
+  it 'does not allow me to create a viewing party unless i am logged in', :vcr do
+    visit "/users/movies/550"
+    click_button "Create Viewing Party"
+
+    expect(current_path).to eq("/users/movies/550")
+    expect(page).to have_content("You have to be logged in to create a viewing party")
+    # save_and_open_page
+  end
 end

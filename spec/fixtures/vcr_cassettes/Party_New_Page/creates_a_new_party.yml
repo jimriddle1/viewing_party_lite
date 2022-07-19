@@ -18,59 +18,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 19 Jul 2022 20:29:17 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5386'
+      - '4768'
       X-Memc-Expires:
-      - '12465'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/19/2022 20:27:41
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - b23d76c234077449a596820d6bc88ca4
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c8780798b589dc6b55523ca0a9bc3c02.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      X-Amz-Cf-Id:
+      - ywbFhovzX3uGidx_TV8oJepl9eyZoU1QZcgexcNhPQepYmBgXUNt7Q==
+      Age:
+      - '3537'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -86,7 +74,7 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:29:17 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:20 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -105,59 +93,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 19 Jul 2022 20:29:17 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5386'
+      - '4768'
       X-Memc-Expires:
-      - '12465'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/19/2022 20:27:41
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - a14577e36fccce787afa8638a0319ee3
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 40867fef594010a8d9ec2cb0a5cb2350.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      X-Amz-Cf-Id:
+      - vlyQMs41Q7ZIT4VrrBQox4wEPxtR9aDGTxwaWVZuSaKFiLRHSA5Dzg==
+      Age:
+      - '3537'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -173,7 +149,7 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:29:17 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:20 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -192,59 +168,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 19 Jul 2022 20:29:17 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5386'
+      - '4768'
       X-Memc-Expires:
-      - '12465'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/19/2022 20:27:41
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - '09cfc99b5970f95b7c4ea1810b040f8b'
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f5c1da639a075ecd7bb86ffc181e3dd8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      X-Amz-Cf-Id:
+      - BKdsoSvZH3Qiojc0fSkkmeYUIONC0EEFCYBhwC-GCzdHgCv9DFZvNA==
+      Age:
+      - '3537'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -260,5 +224,5 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:29:17 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:20 GMT
 recorded_with: VCR 6.1.0

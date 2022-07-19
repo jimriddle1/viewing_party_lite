@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 05df0d22c8cc3d4b946b6f2dc43d6b9c.cloudfront.net (CloudFront)
+      - 1.1 f82a4020c8fc9b14a403737c65661074.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD58-P1
       X-Amz-Cf-Id:
-      - 94qflwobU0pPar7mWIZroidUNsC1i8t-w-tRXB3k3xm2PKl_DTiuCg==
+      - QHQSHjyVEZWL4a80ELVUBofXgek50TTDz2V-ByGwy-eC6gQAKZajEQ==
       Age:
-      - '618'
+      - '3536'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -74,7 +74,7 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:27:41 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:19 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -93,59 +93,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 19 Jul 2022 20:27:41 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5386'
+      - '4768'
       X-Memc-Expires:
-      - '12465'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/19/2022 20:27:41
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 640fd611d699b33773a1d40528865cae
-      Cdn-Cache:
-      - MISS
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 124fcc45b0cac625cd0077abe70a7c60.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      X-Amz-Cf-Id:
+      - w7tSMmbYbvx3MfsA9j1Jl7_Zh-c2PuGPEL-rUaA2D2aLCqliAgLMHw==
+      Age:
+      - '3536'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -161,7 +149,7 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:27:41 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:19 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -180,59 +168,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 19 Jul 2022 20:27:41 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5386'
+      - '4768'
       X-Memc-Expires:
-      - '12465'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/19/2022 20:27:41
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - '079a0847b044b34a9ef28f0d15427c7b'
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 82e46a17c2e4998f87de230e61a57612.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ORD58-P1
+      X-Amz-Cf-Id:
+      - tYfdwxHiAMtRQXFzcyRwjt1kCZ_QGQ5Vhxkuo4FPo4gTsudFen2YXg==
+      Age:
+      - '3537'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -248,5 +224,5 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
-  recorded_at: Tue, 19 Jul 2022 20:27:41 GMT
+  recorded_at: Tue, 19 Jul 2022 21:16:20 GMT
 recorded_with: VCR 6.1.0

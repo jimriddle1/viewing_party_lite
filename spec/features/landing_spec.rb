@@ -95,4 +95,12 @@ RSpec.describe 'Landing Page' do
     expect(page).to have_content('jimar@jimar.com')
 
   end
+
+  it 'tells me that i need to be logged in before going to my dashboard' do
+    visit root_path
+    click_link "Log out"
+    visit '/users/dashboard'
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in to see a dashboard')
+  end
 end

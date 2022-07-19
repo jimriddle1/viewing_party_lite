@@ -8,10 +8,13 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
+      # binding.pry
       redirect_to user_path(user.id)
       flash[:success] = "Welcome, #{user.email}!"
     else
       redirect_to register_path
+      # binding.pry
       flash[:error] = "Invalid Credentials"
     end
   end
@@ -21,7 +24,8 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(params[:id])
+    # binding.pry
+    @user = User.find(session[:user_id])
   end
 
   def movies
@@ -47,6 +51,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to user_path(user)
       flash[:success] = "Welcome back, #{user.email}!"
     else

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      redirect_to user_path(user.id)
+      session[:user_id] = user.id
+      redirect_to '/users/dashboard'
       flash[:success] = "Welcome, #{user.email}!"
     else
       redirect_to register_path
@@ -17,15 +18,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if current_user
+      @user = User.find(session[:user_id])
+    else
+      flash[:error] = "You must be logged in to see a dashboard"
+      redirect_to root_path
+    end
   end
 
   def discover
-    @user = User.find(params[:id])
+    # binding.pry
+    @user = User.find(session[:user_id])
   end
 
   def movies
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
 
     @movies = if params[:search].present?
                 MovieFacade.movie_by_keyword(params[:search])
@@ -35,7 +42,6 @@ class UsersController < ApplicationController
   end
 
   def movie_details
-    @user = User.find(params[:id])
     @movie = MovieFacade.movie_details(params[:movie_id])
     @cast = MovieFacade.movie_cast(params[:movie_id])
     @reviews = MovieFacade.movie_reviews(params[:movie_id])
@@ -47,12 +53,18 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
-      redirect_to user_path(user)
+      session[:user_id] = user.id
+      redirect_to '/users/dashboard'
       flash[:success] = "Welcome back, #{user.email}!"
     else
       redirect_to '/login'
       flash[:error] = "Invalid Credentials"
     end
+  end
+
+  def destroy
+    session.destroy
+    redirect_to root_path
   end
 
   private

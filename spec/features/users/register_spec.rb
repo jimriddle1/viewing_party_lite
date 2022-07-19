@@ -10,7 +10,7 @@ RSpec.describe 'User Registration Page' do
     fill_in 'password', with: 'password123'
     fill_in 'password_confirmation', with: 'password123'
     click_on 'Create User'
-    expect(current_path).to eq(user_path(User.last.id))
+    expect(current_path).to eq("/users/dashboard")
     expect(page).to have_content("Welcome, #{User.last.email}!")
     # save_and_open_page
   end
@@ -22,7 +22,6 @@ RSpec.describe 'User Registration Page' do
     fill_in 'password', with: 'password123'
     fill_in 'password_confirmation', with: 'password123'
     click_on 'Create User'
-    # save_and_open_page
     expect(current_path).to eq(register_path)
     expect(page).to have_content("Invalid Credentials")
     # save_and_open_page

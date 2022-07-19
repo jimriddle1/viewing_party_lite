@@ -29,6 +29,7 @@ RSpec.describe 'Landing Page' do
 
   it 'has a button to create a new user' do
     visit root_path
+    click_link "Log out"
     expect(page).to have_button('Create New User')
     click_button 'Create New User'
     expect(current_path).to eq(register_path)
@@ -55,6 +56,7 @@ RSpec.describe 'Landing Page' do
 
   it 'has a link to login for a user' do
     visit root_path
+    click_link "Log out"
     click_link 'Login'
     expect(current_path).to eq('/login')
     fill_in 'email', with: 'jimar@jimar.com'
@@ -66,6 +68,7 @@ RSpec.describe 'Landing Page' do
 
   it 'has a link to login for a user - sad path' do
     visit root_path
+    click_link "Log out"
     click_link 'Login'
     expect(current_path).to eq('/login')
     fill_in 'email', with: 'jimar@jimar.com'
@@ -73,5 +76,16 @@ RSpec.describe 'Landing Page' do
     click_button 'Log In'
     expect(current_path).to eq('/login')
     expect(page).to have_content("Invalid Credentials")
+  end
+
+  it 'allows me to log in and log out' do
+    visit root_path
+    expect(page).to_not have_link('Login')
+    expect(page).to_not have_button('Create New User')
+    click_link 'Log out'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_link('Login')
+    expect(page).to have_button('Create New User')
   end
 end
